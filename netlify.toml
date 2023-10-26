@@ -2,33 +2,10 @@
   ID = "9b28ed47-6cfa-4057-becb-ae296f7c17ea"
 
 [build]
-  # This is the directory to change to before starting a build.
-  base    = "netlifytewst/"
-  # NOTE: This is where we will look for package.json/.nvmrc/etc, not root.
-  # This is the directory that you are publishing from (relative to root of your repo)
-  #publish = "netlifytewst/build-output/"
-  # This will be your default build command
-  command = "echo 'default context'"
-  # This is where we will look for your lambda functions
-  functions = "netlifytewst/functions/"
-  # Ignore build command if exit 0
-  ignore = "git diff --quiet HEAD^ HEAD sub_dir/"
-  # If skip_processing = true, all other settings are ignored
-  [build.processing]
-    skip_processing = false
-  [build.processing.css]
-    bundle = true
-    minify = false
-  [build.processing.js]
-    bundle = true
-    minify = false
-  [build.processing.html]
-    pretty_urls = true
-  [build.processing.images]
-    compress = true
+    publish = "public"
+    command = "echo No build command"
+    node_bundler = "esbuild"
 
-[functions]
-  # Sets a custom directory for Netlify Functions
-  directory = "netlifytewst/functions/"
-
-  node_bundler = "esbuild"
+[dev]
+    publish = "public"
+    node_bundler = "esbuild"
